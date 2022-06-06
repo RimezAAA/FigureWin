@@ -26,7 +26,7 @@ namespace Figure2
 
         public override string GetInfo()
         {
-            return $"rectangle {base.basePoint.X} {base.basePoint.Y} {Height} {Width}";
+            return $"rectangle {base.basePoint.X} {base.basePoint.Y} {Width} {Height}";
         }
     }
 }
