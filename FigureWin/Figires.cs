@@ -53,19 +53,19 @@ namespace Figure2
                     switch (s[0])
                     {
                         case "line":
-                            figures.Add(new Line(g, new Pen(Color.Black, 3), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
+                            figures.Add(new Line(g, new Pen(Color.FromArgb(Convert.ToInt32(s[5])), Convert.ToInt32(s[6])), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
                             break;
                         case "triangle":
-                            figures.Add(new Triangle(g, new Pen(Color.Black, 3), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4]), Convert.ToInt32(s[5]), Convert.ToInt32(s[6])));
+                            figures.Add(new Triangle(g, new Pen(Color.FromArgb(Convert.ToInt32(s[7])), Convert.ToInt32(s[8])), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4]), Convert.ToInt32(s[5]), Convert.ToInt32(s[6])));
                             break;
                         case "circle":
-                            figures.Add(new Circle(g, new Pen(Color.Black, 3), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3])));
+                            figures.Add(new Circle(g, new Pen(Color.FromArgb(Convert.ToInt32(s[4])), Convert.ToInt32(s[5])), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3])));
                             break;
                         case "rectangle":
-                            figures.Add(new Rectangle(g, new Pen(Color.Black, 3), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
+                            figures.Add(new Rectangle(g, new Pen(Color.FromArgb(Convert.ToInt32(s[5])), Convert.ToInt32(s[6])), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
                             break;
                         case "ellipse":
-                            figures.Add(new Ellipse(g, new Pen(Color.Black, 3), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
+                            figures.Add(new Ellipse(g, new Pen(Color.FromArgb(Convert.ToInt32(s[5])), Convert.ToInt32(s[6])), Convert.ToInt32(s[1]), Convert.ToInt32(s[2]), Convert.ToInt32(s[3]), Convert.ToInt32(s[4])));
                             break;
                     }
                 }
@@ -80,6 +80,7 @@ namespace Figure2
                 sr.Close();
             }
         }
+
 
         public void Draw()
         {

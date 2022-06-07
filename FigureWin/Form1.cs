@@ -84,15 +84,6 @@ namespace FigureWin
             }
         }
 
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
 
         private void Save_Click(object sender, EventArgs e)
         {
@@ -115,7 +106,7 @@ namespace FigureWin
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                color = new Pen(colorDialog1.Color, 3);
+                color = new Pen(colorDialog1.Color, color.Width);
                 ((Button)sender).BackColor = colorDialog1.Color;
             }
         }
@@ -163,6 +154,19 @@ namespace FigureWin
             click = "circle";
             visible();
         }
+
+        private void widthLine_Scroll(object sender, EventArgs e)
+        {
+            color = new Pen(color.Color, widthLine.Value);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            figures = new Figires(g);
+            g.Clear(Color.White);
+            DrawField.Refresh();
+        }
+
         private void buttonEllipse_Click(object sender, EventArgs e)
         {
             click = "ellipse";

@@ -37,6 +37,7 @@
             this.Save = new System.Windows.Forms.ToolStripMenuItem();
             this.Load = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
+            this.widthLine = new System.Windows.Forms.TrackBar();
             this.buttonTriangleTwoPoints = new System.Windows.Forms.Button();
             this.buttonTriangleThreePoints = new System.Windows.Forms.Button();
             this.buttonTriangle = new System.Windows.Forms.Button();
@@ -47,16 +48,18 @@
             this.buttonCircle = new System.Windows.Forms.Button();
             this.buttonColor = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DrawField)).BeginInit();
             this.menu.SuspendLayout();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthLine)).BeginInit();
             this.SuspendLayout();
             // 
             // DrawField
             // 
             this.DrawField.Location = new System.Drawing.Point(0, 72);
             this.DrawField.Name = "DrawField";
-            this.DrawField.Size = new System.Drawing.Size(1920, 902);
+            this.DrawField.Size = new System.Drawing.Size(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size.Width, System.Windows.Forms.Screen.PrimaryScreen.Bounds.Size.Height);
             this.DrawField.TabIndex = 0;
             this.DrawField.TabStop = false;
             this.DrawField.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DrawField_MouseClick);
@@ -74,17 +77,9 @@
             this.buttonEllipse.UseVisualStyleBackColor = true;
             this.buttonEllipse.Click += new System.EventHandler(this.buttonEllipse_Click);
             // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
             // menu
             // 
+            this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Save,
             this.Load});
@@ -110,6 +105,8 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.buttonClear);
+            this.panel.Controls.Add(this.widthLine);
             this.panel.Controls.Add(this.buttonTriangleTwoPoints);
             this.panel.Controls.Add(this.buttonTriangleThreePoints);
             this.panel.Controls.Add(this.buttonTriangle);
@@ -125,6 +122,17 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1534, 49);
             this.panel.TabIndex = 3;
+            // 
+            // widthLine
+            // 
+            this.widthLine.Location = new System.Drawing.Point(615, 2);
+            this.widthLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.widthLine.Minimum = 1;
+            this.widthLine.Name = "widthLine";
+            this.widthLine.Size = new System.Drawing.Size(136, 45);
+            this.widthLine.TabIndex = 11;
+            this.widthLine.Value = 3;
+            this.widthLine.Scroll += new System.EventHandler(this.widthLine_Scroll);
             // 
             // buttonTriangleTwoPoints
             // 
@@ -217,6 +225,16 @@
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(757, 19);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 12;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // Figure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,6 +252,7 @@
             this.menu.PerformLayout();
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthLine)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +278,7 @@
         private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.Button buttonTriangleTwoPoints;
         private System.Windows.Forms.Button buttonTriangleThreePoints;
+        private System.Windows.Forms.TrackBar widthLine;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
